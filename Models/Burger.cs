@@ -11,6 +11,5 @@ namespace HaylandMontalvo_ProyectoCF.Models
         [Range(0.01 , 3.50)]
         public decimal precio { get; set; } 
 
-
     }
 }

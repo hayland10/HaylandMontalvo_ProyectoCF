@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using HaylandMontalvo_ProyectoCF.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<HaylandMontalvo_ProyectoCFContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("HaylandMontalvo_ProyectoCFContext") ?? throw new InvalidOperationException("Connection string 'HaylandMontalvo_ProyectoCFContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
